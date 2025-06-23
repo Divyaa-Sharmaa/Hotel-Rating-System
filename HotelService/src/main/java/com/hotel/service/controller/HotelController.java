@@ -37,7 +37,7 @@ public class HotelController {
 		return ResponseEntity.ok(h);
 	}
 	
-	@GetMapping("/hotel/{hotelId}")
+	@GetMapping("/{hotelId}")
 	public ResponseEntity<Hotel> getHotelById(@PathVariable String hotelId){
 		Hotel h = hotelServ.getHotelById(hotelId);
 		return ResponseEntity.ok(h);
@@ -49,7 +49,7 @@ public class HotelController {
 		return ResponseEntity.ok("Hotel details has been deleted successfully");
 	}
 	
-	@PutMapping("/hotel/{hotelId}")
+	@PutMapping("/{hotelId}")
 	public ResponseEntity<Hotel> updateHotelDetails(@RequestBody Hotel hotel, @PathVariable String hotelId){
 		Hotel h = hotelServ.updateHotelDetails(hotel, hotelId);
 		return ResponseEntity.ok(h);
